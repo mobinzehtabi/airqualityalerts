@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اعلانات لحظه ای آلودگی هوا</title>
+    <style>
+        /* Your existing CSS styles here */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://www.pixground.com/wp-content/uploads/2023/10/Floating-City-Pixel-World-AI-Generated-4K-Wallpaper.jpg');
+            background-size: cover;
+            background-color: #f5f5f5;
+            overflow-y: scroll;
+            scrollbar-width: thin;
+            scrollbar-color: #ddd #f5f5f5;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #ddd;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #009688;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: #fff;
+            text-align: center;
+            padding: 5px;
+            border-bottom: 2px solid #00796b;
+        }
+
+        .credit-line {
+            font-size: 14px;
+            color: #ffffff;
+            text-align: center;
+            margin-top: 2px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .registration-form {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding-bottom: 60px; /* Adjusted padding to accommodate the fixed footer */
+        }
+
+        form {
+            display: grid;
+            gap: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #333;
+            text-align: right; /* Align label text to the right */
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: right; /* Align input/select text to the right */
+        }
+
+        button {
+            background-color: #009688;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #00796b;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 10px;
+            display: none;
+        }
+
+        footer {
+            background-color: #009688;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            border-top: 2px solid #00796b;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 20px;
+            margin-bottom: 0px;
+            padding-bottom: 20px;
+            padding-top: 0px;
+        }
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>اعلانات لحظه ای آلودگی هوا</h1>
+        <div class="credit-line">Credit: Mobin Zehtabi Aslkhiabani</div>
+    </header>
+
+    <section class="registration-form">
+        <h2>جهت استفاده از خدمات سامانه، فرم ثبت نام را تکمیل فرمایید</h2>
+        <form id="registrationForm" onsubmit="return validateForm()">
+            <label for="name">:نام و نام خانوادگی</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="dob">:تاریخ تولد</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label for="city">:محل سکونت</label>
+            <select id="city" name="city" required>
+                <option value="" disabled selected>یک شهر را انتخاب کنید</option>
+                <option value="tehran">تهران</option>
+                <option value="tabriz">تبریز</option>
+            </select>
+
+            <label for="email">:ایمیل</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">:شماره تلفن همراه</label>
+            <input type="tel" id="phone" name="phone" required>
+            
+            <div class="error-message" id="errorMessage">لطفاً تمام فیلدهای ضروری را پر کنید.</div>
+
+            <button type="submit">ثبت نام</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; All rights reserved.2024</p>
+    </footer>
+
+    <script>
+        function validateForm() {
+            // Check if the form is valid
+            const form = document.getElementById('registrationForm');
+            if (form.checkValidity()) {
+                // Perform registration logic here (save to server, etc.)
+
+                // Optionally, you can reset the form after a successful registration
+                form.reset();
+
+                // Hide the error message
+                document.getElementById('errorMessage').style.display = 'none';
+
+                return true;
+            } else {
+                // If the form is not valid, show the error message
+                document.getElementById('errorMessage').style.display = 'block';
+
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
